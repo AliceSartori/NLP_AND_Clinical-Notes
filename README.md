@@ -68,20 +68,23 @@ Steps:
 
 # Limitations 
 
-- Why isn't our model performing even better?
+Why isn't our model performing even better?
 
 * In medical transcriptions, there is an overlap in the words that are used.  For example, one of our datapoints predicted gastroenterology, however the actual specialty was surgery (could've been surgery of the stomach, so keywords would've overlapped in this exmaple) 
 
 * We had to make sure to not steer our model and overfit it to show our biases.  If we brought too much bias into the process, we would've been taking away the advtange of machine learning.
 
 
-# Reach Goals (for the future)
+# Reach Goals
 
-- What would make our models better?
+What would make our models better?
 
 * Spending more time analyzing / cleaning text data
 * Customize stopwords (would need subject mattter expertise)
 * Balancing of the dataset
 * More data / medical transcriptions
+
+To add in the future:
+
 
 * Front-end website to input symptoms and correct medical specialty will pop up
