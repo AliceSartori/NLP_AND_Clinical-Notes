@@ -56,12 +56,13 @@ From Notebook 2, we gave more importance to Nouns on the assumptions that the Me
 *Notebook 3 Resampling*
 Machine Learning algorithms tend to produce unsatisfactory classifiers when faced with imbalanced datasets. Standard classifier algorithms like Decision Tree and Logistic Regression have a bias towards classes which have number of instances. They tend to only predict the majority class data. The features of the minority class are treated as noise and are often ignored. Thus, there is a high probability of misclassification of the minority class as compared to the majority class.
 Our data set had 2 numerous classes (Surgery and Consultation) that were predicted more than the others.
-We reduced the amount of the higher categories with a sample mechanism, and combine some of the lower categories into 'Others'.
+We reduced their amount of datapoint of these two categories with a sampling function to keep the random factor and combine some of the categories with lower amount od datapoints into 'Others'.
 
 **Creating the Model**
 
-1. Converting Text to Word Frequency Vectors
-2. Used RandomForest and Grid Search, NaiveBayes, Logistic Regression, 
+1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular.
+2. 
+3. NaiveBayes, RandomForest and Grid Search, Logistic Regression.
 
 
 # Transcription Data after all preprocessing
@@ -116,6 +117,7 @@ We reduced the amount of the higher categories with a sample mechanism, and comb
 
 * Preprocessing the data: lemmatizing, pos tagging, tokenizing
 * Making the dataset more balanced: finding the right amount to remove/keep/adjust
+* Finding the algorithm to use
 
 
 # Limitations 
@@ -125,10 +127,10 @@ We reduced the amount of the higher categories with a sample mechanism, and comb
 * Medical data in general is a lot harder to analyze / preprocess as it is very complicated
     
     1. In medical transcriptions, there is an overlap in the words that are used.  For example, one of our datapoints predicted gastroenterology, however the actual specialty was surgery (could've been surgery of the stomach, so keywords would've overlapped in this example) 
+    
+    2. In clinical notes the same text could be repeated (a lot of copy and paste)
 
-    2. Some english stopwords might be useful that were removed ("back", "have", "had")
-
-    3. Some medical stopwords could be removed that weren't ("patient","doctor")
+    3. Some medical stopwords could be removed that weren't ("patient","doctor", "diagnosis")
 
 * We had to make sure to not steer our model and overfit it to show our biases.  If we brought too much bias into the process, we would've been taking away the advtange of machine learning.
 
@@ -139,9 +141,9 @@ We reduced the amount of the higher categories with a sample mechanism, and comb
 
 **What would make our models better?**
 
-* Spending more time analyzing / cleaning text data
-* Customize stopwords (would need subject mattter expertise)
+* Spending more time analyzing / cleaning text data 
+* Customize stopwords (would need subject matter expertise)
 * Balancing of the dataset
-* Finding more data / medical transcriptions
+* Finding more data / medical transcriptions for the specialties with less datapoints.
 
 
