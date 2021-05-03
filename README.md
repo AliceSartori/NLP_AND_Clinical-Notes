@@ -94,7 +94,8 @@ F1 score is a weighted harmonic mean of precision and recall such that the best 
 
 Support is the number of actual occurrences of the class in the specified dataset. Imbalanced support in the training data may indicate structural weaknesses in the reported scores of the classifier and could indicate the need for stratified sampling or rebalancing. 
 
-
+As it can be easily seen on the classification report heatmaps, Hyperparameter tuning with GridSearchCV on the RandomForest gave us the best result. 
+Note that for Dentistry, we had very good results before blending it to the category "Others", most probably due to the very sectorial vocabulary of a dentist.
 
 ## MultinomialNB 
 
