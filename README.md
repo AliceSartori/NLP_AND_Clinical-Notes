@@ -11,11 +11,6 @@ A large part of medical information is reported as free-text and patient clinica
 
 For our final project, our group chose to use a dataset (from [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)) that contained medical transcriptions and the respective medical specialties (4999 datapoints). We chose to implement multiple supervised classification machine learning models - after heavily working on the corpora - to see if we were able to correctly classify the medical specialty based on the trascription text. 
 
-# Dataset: the Challenge of Cleaning
-
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/original_dataset.png)
-
-
 # Tools / Technology Used
 
 * CSV File                              
@@ -37,6 +32,9 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 
 Our project has three notebooks which shows the different phases of our work as far as cleaning, ideas, and analysis. 
 Our method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
+Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization. 
+Below a glance of the CSV: 
+![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/Screen%20Shot%202021-05-03%20at%2012.33.12%20PM.png)
 
 *Notebook 1*
 
