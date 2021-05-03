@@ -110,7 +110,9 @@ Note that for Dentistry, we had very good results before blending it to the cate
                     
  ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_WITHREDUCTION.png)
                        
-                    
+
+## Hyperparameter tuning with GridSearchCV (RandomForest)
+
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
                    
 
