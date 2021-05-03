@@ -42,7 +42,8 @@ Classic Approach
 3. Stopwords: removed 'stopwords' (words that provide no meaning to sentence)
 3. Dropped / Combined Medical Specialties: removed specialties not needed (workers comp, hospice, etc.) / combined specialties together
 4. Lemmatized words : converted our tokenized words into its meaningful base form
-5. POS Tagging: marked up words with specific part of speech
+5. Limit the lenght of our corpora
+6. POS Tagging: marked up words with specific part of speech
 
 *Notebook 2*
 Medical Approach
@@ -52,8 +53,10 @@ From Notebook 2, we gave more importance to Nouns on the assumptions that the Me
 3. Didn't take away English Stop Words (ex. English words like 'back' are treated as stop words, but in medical those field might be useful)
 
 *Notebook 3*
-Inbalanced data set issue
-1. Reduced medical specialties: our  familierthere was a major imbalance in our dataset, so we wanted to reduce the amount of the higher categories, and combine some of the lower categories into 'other specialties'
+The loophole of an imbalance data set
+Machine Learning algorithms tend to produce unsatisfactory classifiers when faced with imbalanced datasets. Standard classifier algorithms like Decision Tree and Logistic Regression have a bias towards classes which have number of instances. They tend to only predict the majority class data. The features of the minority class are treated as noise and are often ignored. Thus, there is a high probability of misclassification of the minority class as compared to the majority class.
+Our data set had 2 numerous classes (Surgery and Consultation) that were predicted more than the others.
+1. Reduced medical specialties: we reduced the amount of the higher categories with a sample mechanism, and combine some of the lower categories into 'Others'
 
 **Creating the Model**
 
