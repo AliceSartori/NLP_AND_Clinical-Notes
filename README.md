@@ -19,7 +19,7 @@ For our final project, our group chose to use a dataset (from Kaggle) that conta
 
 [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/original_dataset.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/original_dataset.png)
 
 
 # Tools / Technology Used
@@ -74,11 +74,11 @@ Notebook 3
 
 # Token / Lemmatization Graphs
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_tokens_number_WITHOUTREDUCTION.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_tokens_number_WITHOUTREDUCTION.png)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_Lemmas_after_first_reduction.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_Lemmas_after_first_reduction.png)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/tokens_plot_total_corpus.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/tokens_plot_total_corpus.png)
 
 
 
