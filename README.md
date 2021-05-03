@@ -75,11 +75,11 @@ We reduced their amount of datapoint of these two categories with a sampling fun
 
 # Token / Lemmatization Graphs
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_tokens_number_WITHOUTREDUCTION.png)
-                    Tokens # (Without Reduction)
+![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/plots/Corpus_view_with_tokens_number_WITHOUTREDUCTION_Beginning.png)
+                    Tokens #: after some reduction in specialties (8) and before deciding to put a lowerbound and upperbound for their #
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_Lemmas_after_first_reduction.png)
-                    Lemmatized # (With Reduction)
+                    Lemmatized # (With Reduction, before deciding to reduce the Surgery and Consultation )
 
 
 # Results
