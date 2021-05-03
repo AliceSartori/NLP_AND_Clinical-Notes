@@ -37,11 +37,11 @@ For our final project, our group chose to use a dataset (from Kaggle) that conta
 
 # Process
 
-*Preprocessing Data*
+**Preprocessing Data**
 
 Our project has three notebooks which shows the different methods we took when cleaning our data.  Our method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
 
-Notebook 1 
+*Notebook 1*
 
 1. Character removal: removed specific characters in our medical transcription column 
 2. Word Tokenization : split our transcription sentences into smaller parts (individual words) called tokens
@@ -50,35 +50,39 @@ Notebook 1
 4. Lemmatized words : converted our tokenized words into its meaningful base form
 5. POS Tagging: marked up words with specific part of speech
 
-After running notebook 1 and with further research, we changed a few things:
 
-Notebook 2
+*Notebook 2*
 
 6. Performed POS Tagging before lemmatizing the words
 7. Removed all words that were not nouns or a form of a noun (nouns contain the meaning)
 
-After running notebook 2 and seeing our results, we changed something else:
 
-Notebook 3
+*Notebook 3*
 
 8. Reduced medical specialties : there was a major imbalance in our dataset, so we wanted to reduce the amount of the higher categories, and combine some of the lower categories into 'other specialties'
 
-*Creating the Model*
+**Creating the Model**
 
 1. Converting Text to Word Frequency Vectors
 2. Used RandomForest & NaiveBayes
 
-# Data after preprocessing
 
+# Transcription Data after all preprocessing
+
+
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/preprocessed_dataset.png)
 
 
 # Token / Lemmatization Graphs
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_tokens_number_WITHOUTREDUCTION.png)
+                    Tokens # (Without Reduction)
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_Lemmas_after_first_reduction.png)
+                    Lemmatized # (With Reduction)
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/tokens_plot_total_corpus.png)
+                                POS Tags
 
 
 
@@ -88,18 +92,20 @@ Notebook 3
 
 # Summary of Findings Graphs
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_FIRST_ANALYSIS.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_WITHREDUCTION.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_FIRST_ANALYSIS.png)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_FIRSTANALYSIS.png | width=200)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_WITHREDUCTION.png)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_WITHREDUCTION.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_FIRSTANALYSIS.png)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_with_reduction.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_WITHREDUCTION.png)
+
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_with_reduction.png)
 
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_without_reduction.png | width=100)
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_without_reduction.png)
 
 
 
@@ -109,10 +115,9 @@ Notebook 3
 * Making the dataset more balanced: finding the right amount to remove/keep/adjust
 
 
-
 # Limitations 
 
-Why isn't our model performing even better?
+**Why isn't our model performing even better?**
 
 * Medical data in general is a lot harder to analyze / preprocess as it is very complicated
     
@@ -129,7 +134,7 @@ Why isn't our model performing even better?
 
 # Reflection
 
-What would make our models better?
+**What would make our models better?**
 
 * Spending more time analyzing / cleaning text data
 * Customize stopwords (would need subject mattter expertise)
