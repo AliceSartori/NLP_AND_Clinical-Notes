@@ -19,7 +19,7 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 * Matplotlib                            
 * NLTK (Natural Language Toolkit)
 * RandomForest
-* Naive Bayes
+* Multinomial Naive Bayes
 * Scikit-learn
 * LogisticRegression
 * Hyperparameter tuning with GridSearchCV (RandomForest)
@@ -125,7 +125,7 @@ Support is the number of actual occurrences of the class in the specified datase
 
 # Main Challenges
 
-* Preprocessing the data: lemmatizing, pos tagging, tokenizing
+* Preprocessing the data: cleaning, lemmatizing, POS tagging, tokenizing
 * Making the dataset more balanced: finding the right amount to remove/keep/adjust
 * Finding the algorithm to use
 
@@ -140,7 +140,7 @@ Support is the number of actual occurrences of the class in the specified datase
     
     2. In clinical notes the same text could be repeated by the same practitioner (a lot of copy and paste)
 
-    3. Some medical stopwords could have been removed ("patient","doctor", "diagnosis") due to a high/high relationship TF/IDF
+    3. Some medical stopwords could have been removed ("patient", "doctor", "diagnosis") due to a high/high relationship TF/IDF
 
 * We had to make sure to not steer our model and overfit it to show our biases.  If we brought too much bias into the process, we would've been taking away the advatange of machine learning.
 
