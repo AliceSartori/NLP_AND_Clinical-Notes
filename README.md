@@ -86,6 +86,15 @@ We reduced their amount of datapoint of these two categories with a sampling fun
 
 
 # Summary of Findings Graphs
+Precision can be seen as a measure of a classifier’s exactness. Said another way, “for all instances classified positive, what percent was correct?”
+
+Recall is a measure of the classifier’s completeness; the ability of a classifier to correctly find all positive instances. Said another way, “for all instances that were actually positive, what percent was classified correctly?”
+
+F1 score is a weighted harmonic mean of precision and recall such that the best score is 1.0 and the worst is 0.0. Generally speaking, F1 scores are lower than accuracy measures as they embed precision and recall into their computation. As a rule of thumb, the weighted average of F1 should be used to compare classifier models, not global accuracy.
+
+Support is the number of actual occurrences of the class in the specified dataset. Imbalanced support in the training data may indicate structural weaknesses in the reported scores of the classifier and could indicate the need for stratified sampling or rebalancing. 
+
+
 
 ## MultinomialNB 
 
