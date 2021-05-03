@@ -62,9 +62,9 @@ We reduced their amount of datapoint of these two categories with a sampling fun
 
 **Creating the Model**
 
-1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular.
-2. 
-3. NaiveBayes, RandomForest and Grid Search, Logistic Regression.
+1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular (how many times a term appears in a document/reciprocal of number of times a term appears in all documents)
+2. From this conversion: Measure of how informative a term  (occurrence of rare term is more informative than that of a widely used term/terms used frequently in a document are more informative that terms used only once)
+3. Algorithms used: NaiveBayes (Multinomial), RandomForest and Grid Search, Logistic Regression.
 
 
 # Transcription Data after all preprocessing
