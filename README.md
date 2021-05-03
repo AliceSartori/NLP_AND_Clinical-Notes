@@ -90,20 +90,20 @@ We reduced their amount of datapoint of these two categories with a sampling fun
 ## MultinomialNB 
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_FIRSTANALYSIS.png)
-                    Classification Report (multinomial without reduction)
+                 
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_WITHREDUCTION.png)
-                    Classification Report (multinomial with reduction)
+                  
 
 ## RandomForest
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_FIRST_ANALYSIS.png)
-                    Classification Report (randomforest without reduction)
+                 
                     
  ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_WITHREDUCTION.png)
-                    Classification Report (randomforest with reduction)      
+                       
                     
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
-                    Classification Report (gridsearch with reduction)
+                   
 
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_without_reduction.png)
