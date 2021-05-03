@@ -14,6 +14,7 @@ For our final project, our group chose to use a dataset (from Kaggle) that conta
 # Dataset
 
 [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)
+
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/original_dataset.png)
 
 
