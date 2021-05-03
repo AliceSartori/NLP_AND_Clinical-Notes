@@ -79,7 +79,7 @@ We reduced their amount of datapoint of these two categories with a sampling fun
                     Tokens #: after some reduction in specialties (8) and before deciding to put a lowerbound and upperbound for their #
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_Lemmas_after_first_reduction.png)
-                    Lemmatized # (With Reduction, before deciding to reduce the Surgery and Consultation )
+                    Lemmatized # (With Reduction, before deciding to reduce Surgery and Consultation )
 
 
 # Results
