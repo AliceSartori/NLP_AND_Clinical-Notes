@@ -54,6 +54,7 @@ From Notebook 2, we gave more importance to Nouns on the assumptions that the Me
 4. Didn't take away English Stop Words (ex. English words like 'back' are treated as stop words, but in medical those field might be useful)
 
 *Notebook 3 Resampling*
+
 Machine Learning algorithms tend to produce unsatisfactory classifiers when faced with imbalanced datasets. Standard classifier algorithms like Decision Tree and Logistic Regression have a bias towards classes which have number of instances. They tend to only predict the majority class data. The features of the minority class are treated as noise and are often ignored. Thus, there is a high probability of misclassification of the minority class as compared to the majority class.
 Our data set had 2 numerous classes (Surgery and Consultation) that were predicted more than the others.
 We reduced their amount of datapoint of these two categories with a sampling function to keep the random factor and combine some of the categories with lower amount od datapoints into 'Others'.
