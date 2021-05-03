@@ -3,22 +3,16 @@
 
 # Topic Selection
 
-
-Machine learning is an area that is seeing more acceptance and use in the healthcare industry.  There are many technological advances in handling and analyzing medical data, as it is very clear that it can provide meaningful advances to improve healthcare and therefore the well being of people.  
-
-In specific, machine learning algorithms in Natural Language Processing (NLP) are being widely used in Healthcare & Life Sciences to extract information from unstructured text data.  The ultimate goal of NLP is to read, understand, and make sense of languages in a valuable way.  
-
-As a group, we decided that we wanted to dip our feet into this fast growing field and apply our machine learning skills to see what we could accomplish!
-
+Medical data is extremely hard to find due to HIPAA (Health Insurance Portability and Accountability Act) privacy regulations. As a group, we decided to dip our feet into the fast growing field of Machine Learning and NLP (Natural Language Processing) to extract valuable information from unstructed medical text data. 
+Why NLP in healthcare? 
+A large part of medical information is reported as free-text and patient clinical history has been conveyed for centuries by all medical professionals in the form of notes, reports, trascriptions. 
 
 # Project overview
 
-For our final project, our group chose to use a dataset (from Kaggle) that contained medical transcriptions and the respective medical specialty for around 5000 patients. We chose to implement a supervised machine learning model for Natural Language Processing (NLP) that would predict the medical specialty to which each patient needs based on the medical transcriptions.
+For our final project, our group chose to use a dataset (from Kaggle) that contained medical transcriptions and the respective medical specialties (4999 datapoints). We chose to implement multiple supervised classification machine learning models - after heavily working on the corpora - to see if we were able to correctly classify the medical specialty based on the trascription text. 
 
 # Dataset
-
 [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)
-
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/original_dataset.png)
 
 
@@ -33,13 +27,16 @@ For our final project, our group chose to use a dataset (from Kaggle) that conta
 * Naive Bayes
 * Scikit-learn
 * LogisticRegression
+* GridSearch
 * TfidfVectorizer
+* Yellowbrick
 
-# Process
+# Pipeline
 
 **Preprocessing Data**
 
-Our project has three notebooks which shows the different methods we took when cleaning our data.  Our method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
+Our project has three notebooks which shows the different phases of our work as far as cleaning, ideas, and analysis. 
+Our method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
 
 *Notebook 1*
 
