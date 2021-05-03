@@ -48,10 +48,9 @@ Across all notebooks cleaning the data set and getting rid of characters in the 
 From Notebook 2, we gave more importance to Nouns on the assumptions that the Medical vocabolary Nouns are specific to this field and they carry the true meaning. We also were more agressive and removed dates, numbers, PHI etc.
 1. We eliminated more characters 
 2. Performed POS Tagging before lemmatizing the words to remove all POS tags that were not Nouns
+3. 4. Didn't take away English Stop Words (ex. English words like 'back' are treated as stop words, but in medical those field might be useful)
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/tokens_plot_total_corpus.png)
-                               
-4. Didn't take away English Stop Words (ex. English words like 'back' are treated as stop words, but in medical those field might be useful)
 
 
 *Notebook 3 Resampling*
