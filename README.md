@@ -9,7 +9,7 @@ A large part of medical information is reported as free-text and patient clinica
 
 # Project overview
 
-For our final project, our group chose to use a dataset (from Kaggle) that contained medical transcriptions and the respective medical specialties (4999 datapoints). We chose to implement multiple supervised classification machine learning models - after heavily working on the corpora - to see if we were able to correctly classify the medical specialty based on the trascription text. 
+For our final project, our group chose to use a dataset (from Kaggle, [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)) that contained medical transcriptions and the respective medical specialties (4999 datapoints). We chose to implement multiple supervised classification machine learning models - after heavily working on the corpora - to see if we were able to correctly classify the medical specialty based on the trascription text. 
 
 # Dataset
 
