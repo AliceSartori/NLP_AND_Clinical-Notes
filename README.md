@@ -35,8 +35,7 @@ Our method was a constant give and take - trying different methods, seeing how t
 Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization.
 ![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/Screen%20Shot%202021-05-03%20at%2012.33.12%20PM.png)
 
-*Notebook 1*
-Classic Approach
+*Notebook 1 Classic Approach*
 1. Character lowercase and removal: removed specific characters in our medical transcription column 
 2. Word Tokenization: split our transcription sentences into smaller parts (individual words) called tokens
 3. Stopwords: removed 'stopwords' (words that provide no meaning to sentence)
@@ -45,8 +44,7 @@ Classic Approach
 5. Limit the lenght of our corpora
 6. POS Tagging: marked up words with specific part of speech
 
-*Notebook 2*
-Medical Approach
+*Notebook 2 Medical Approach*
 From Notebook 2, we gave more importance to Nouns on the assumptions that the Medical vocabolary Nouns are specific to this field and they carry the true meaning. We also were more agressive and removed dates, numbers, PHI etc.
 1. We eliminated more characters 
 2. Performed POS Tagging before lemmatizing the words to remove all POS tags that were not Nouns
@@ -55,11 +53,10 @@ From Notebook 2, we gave more importance to Nouns on the assumptions that the Me
                                
 4. Didn't take away English Stop Words (ex. English words like 'back' are treated as stop words, but in medical those field might be useful)
 
-*Notebook 3*
-The loophole of an imbalance data set
+*Notebook 3 Resampling*
 Machine Learning algorithms tend to produce unsatisfactory classifiers when faced with imbalanced datasets. Standard classifier algorithms like Decision Tree and Logistic Regression have a bias towards classes which have number of instances. They tend to only predict the majority class data. The features of the minority class are treated as noise and are often ignored. Thus, there is a high probability of misclassification of the minority class as compared to the majority class.
 Our data set had 2 numerous classes (Surgery and Consultation) that were predicted more than the others.
-1. Reduced medical specialties: we reduced the amount of the higher categories with a sample mechanism, and combine some of the lower categories into 'Others'
+We reduced the amount of the higher categories with a sample mechanism, and combine some of the lower categories into 'Others'.
 
 **Creating the Model**
 
