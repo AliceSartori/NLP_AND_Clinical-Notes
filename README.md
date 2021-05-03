@@ -36,24 +36,24 @@ Across all notebooks cleaning the data set and getting rid of characters in the 
 ![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/Screen%20Shot%202021-05-03%20at%2012.33.12%20PM.png)
 
 *Notebook 1*
-
-1. Character removal: removed specific characters in our medical transcription column 
-2. Word Tokenization : split our transcription sentences into smaller parts (individual words) called tokens
+Classic Approach
+1. Character lowercase and removal: removed specific characters in our medical transcription column 
+2. Word Tokenization: split our transcription sentences into smaller parts (individual words) called tokens
 3. Stopwords: removed 'stopwords' (words that provide no meaning to sentence)
 3. Dropped / Combined Medical Specialties: removed specialties not needed (workers comp, hospice, etc.) / combined specialties together
 4. Lemmatized words : converted our tokenized words into its meaningful base form
 5. POS Tagging: marked up words with specific part of speech
 
-
 *Notebook 2*
-
-6. Performed POS Tagging before lemmatizing the words
-7. Removed all words that were not nouns or a form of a noun (nouns contain the meaning)
-
+Medical Approach
+From Notebook 2, we gave more importance to Nouns on the assumptions that the Medical vocabolary Nouns are specific to this field and they carry the true meaning. We also were more agressive and removed dates, numbers, PHI etc.
+1. We eliminated more characters 
+2. Performed POS Tagging before lemmatizing the words to remove all POS tags that were not Nouns
+3. Didn't take away English Stop Words (ex. English words like 'back' are treated as stop words, but in medical those field might be useful)
 
 *Notebook 3*
-
-8. Reduced medical specialties : there was a major imbalance in our dataset, so we wanted to reduce the amount of the higher categories, and combine some of the lower categories into 'other specialties'
+Inbalanced data set issue
+1. Reduced medical specialties: our  familierthere was a major imbalance in our dataset, so we wanted to reduce the amount of the higher categories, and combine some of the lower categories into 'other specialties'
 
 **Creating the Model**
 
