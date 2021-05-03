@@ -32,8 +32,7 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 
 Our project has three notebooks which shows the different phases of our work as far as cleaning, ideas, and analysis. 
 Our method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
-Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization. 
-Below a glance of the CSV: 
+Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization.
 ![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/Screen%20Shot%202021-05-03%20at%2012.33.12%20PM.png)
 
 *Notebook 1*
