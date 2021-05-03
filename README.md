@@ -154,6 +154,7 @@ Note that for Dentistry, we had very good results before blending it to the cate
 **What would make our models better?**
 * Short term: Random Search Cross Validation using  RandomizedSearchCV method: we can define a grid of hyperparameter ranges and randomly sample from the grid. On each iteration, the algorithm will choose a different combination of the features. However, the benefit of a random search is that we are not trying every combination, but selecting at random to sample a wide range of values. Random search will allow us to narrow down the range for each hyperparameter. After that, we will know where to concentrate our search and we will be able to explicitly specify every combination of settings to try. We can do this with GridSearchCV.
 * Short term: Customize stopwords 
+* Deep Learning Algorithm
 * Spending more time analyzing / cleaning text data (would need subject matter expertise)
 * Balancing of the dataset
 * Finding more data / medical transcriptions for the specialties with less datapoints
