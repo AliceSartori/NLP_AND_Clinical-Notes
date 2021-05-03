@@ -22,7 +22,7 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 * Naive Bayes
 * Scikit-learn
 * LogisticRegression
-* GridSearch
+* Hyperparameter tuning with GridSearchCV (RandomForest)
 * TfidfVectorizer
 * Yellowbrick
 
@@ -64,7 +64,7 @@ We reduced their amount of datapoint of these two categories with a sampling fun
 
 1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular (how many times a term appears in a document/reciprocal of number of times a term appears in all documents)
 2. From this conversion: Measure of how informative a term  (occurrence of rare term is more informative than that of a widely used term/terms used frequently in a document are more informative that terms used only once)
-3. Algorithms used: NaiveBayes (Multinomial), RandomForest and Grid Search, Logistic Regression.
+3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression.
 
 
 # Transcription Data after all preprocessing
@@ -81,31 +81,30 @@ We reduced their amount of datapoint of these two categories with a sampling fun
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/Corpus_view_with_Lemmas_after_first_reduction.png)
                     Lemmatized # (With Reduction)
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/tokens_plot_total_corpus.png)
-                                POS Tags
-
-
 
 # Results
 
 
-
 # Summary of Findings Graphs
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
-                    Classification Report (gridsearch with reduction)
-
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_FIRST_ANALYSIS.png)
-                    Classification Report (randomforest without reduction)
-
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_WITHREDUCTION.png)
-                    Classification Report (randomforest with reduction)
+## MultinomialNB 
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_FIRSTANALYSIS.png)
                     Classification Report (multinomial without reduction)
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_multinomial_WITHREDUCTION.png)
                     Classification Report (multinomial with reduction)
+
+## RandomForest
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_FIRST_ANALYSIS.png)
+                    Classification Report (randomforest without reduction)
+                    
+ ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_RANDOMFOREST_WITHREDUCTION.png)
+                    Classification Report (randomforest with reduction)      
+                    
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
+                    Classification Report (gridsearch with reduction)
+
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_without_reduction.png)
                     Confusion Matrix (without reduction)
@@ -130,11 +129,11 @@ We reduced their amount of datapoint of these two categories with a sampling fun
     
     1. In medical transcriptions, there is an overlap in the words that are used.  For example, one of our datapoints predicted gastroenterology, however the actual specialty was surgery (could've been surgery of the stomach, so keywords would've overlapped in this example) 
     
-    2. In clinical notes the same text could be repeated (a lot of copy and paste)
+    2. In clinical notes the same text could be repeated by the same practitioner (a lot of copy and paste)
 
-    3. Some medical stopwords could be removed that weren't ("patient","doctor", "diagnosis")
+    3. Some medical stopwords could have been removed ("patient","doctor", "diagnosis") due to a high/high relationship TF/IDF
 
-* We had to make sure to not steer our model and overfit it to show our biases.  If we brought too much bias into the process, we would've been taking away the advtange of machine learning.
+* We had to make sure to not steer our model and overfit it to show our biases.  If we brought too much bias into the process, we would've been taking away the advatange of machine learning.
 
 * Lack of medical data information
 
@@ -142,10 +141,10 @@ We reduced their amount of datapoint of these two categories with a sampling fun
 # Reflection
 
 **What would make our models better?**
-
-* Spending more time analyzing / cleaning text data 
-* Customize stopwords (would need subject matter expertise)
+* Short term: Random Search Cross Validation using  RandomizedSearchCV method: we can define a grid of hyperparameter ranges and randomly sample from the grid. On each iteration, the algorithm will choose a different combination of the features. However, the benefit of a random search is that we are not trying every combination, but selecting at random to sample a wide range of values. Random search will allow us to narrow down the range for each hyperparameter. After that, we will know where to concentrate our search and we will be able to explicitly specify every combination of settings to try. We can do this with GridSearchCV.
+* Short term: Customize stopwords 
+* Spending more time analyzing / cleaning text data (would need subject matter expertise)
 * Balancing of the dataset
-* Finding more data / medical transcriptions for the specialties with less datapoints.
+* Finding more data / medical transcriptions for the specialties with less datapoints
 
 
