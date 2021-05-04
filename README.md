@@ -28,6 +28,10 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 * Hyperparameter tuning with GridSearchCV (RandomForest)
 * TfidfVectorizer
 * Yellowbrick
+* Plotly
+* Doc2Vec
+* PCA
+* Gensim
 
 # Pipeline
 
@@ -39,6 +43,8 @@ Across all notebooks cleaning the data set and getting rid of characters in the 
 ![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/Screen%20Shot%202021-05-03%20at%2012.33.12%20PM.png)
 
 *Notebook 1 Classic Approach*
+<iframe src="https://giphy.com/embed/7avKZusvEXZxm2nIot" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/7avKZusvEXZxm2nIot">via GIPHY</a></p>
+
 1. Character lowercase and removal: removed specific characters in our medical transcription column 
 2. Word Tokenization: split our transcription sentences into smaller parts (individual words) called tokens
 3. Stopwords: removed 'stopwords' (words that provide no meaning to sentence)
