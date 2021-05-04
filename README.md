@@ -44,7 +44,7 @@ Across all notebooks cleaning the data set and getting rid of characters in the 
 
 *Notebook 1 Classic Approach*
 
-![](citi.gif)
+![](giphy3dplot.gif)
 
 1. Character lowercase and removal: removed specific characters in our medical transcription column 
 2. Word Tokenization: split our transcription sentences into smaller parts (individual words) called tokens
