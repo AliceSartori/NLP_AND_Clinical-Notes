@@ -9,7 +9,7 @@ A large part of medical information is reported as free-text and patient clinica
 
 # Project overview
 
-For our final project, our group chose to use a dataset (from [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)) that contained medical transcriptions and the respective medical specialties (4999 datapoints). We chose to implement multiple supervised classification machine learning models - after heavily working on the corpora - to see if we were able to correctly classify the medical specialty based on the trascription text. 
+For our final project, our group chose to use a dataset (from [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)) that contained medical transcriptions and the respective medical specialties (4998 datapoints). We chose to implement multiple supervised classification machine learning models - after heavily working on the corpora - to see if we were able to correctly classify the medical specialty based on the trascription text. 
 
 # Tools / Technology Used
 
@@ -53,11 +53,13 @@ From Notebook 2, we gave more importance to Nouns on the assumptions that the Me
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/tokens_plot_total_corpus.png)
 
 
-*Notebook 3 Resampling*
+*Notebook 3 Random under-sampling*
 
 Machine Learning algorithms tend to produce unsatisfactory classifiers when faced with imbalanced datasets. Standard classifier algorithms like Decision Tree and Logistic Regression have a bias towards classes which have number of instances. They tend to only predict the majority class data. The features of the minority class are treated as noise and are often ignored. Thus, there is a high probability of misclassification of the minority class as compared to the majority class.
-Our data set had 2 numerous classes (Surgery and Consultation) that were predicted more than the others.
-We reduced their amount of datapoint of these two categories with a sampling function to keep the random factor and combine some of the categories with lower amount od datapoints into 'Others'.
+Dealing with imbalanced datasets entails strategies such as improving classification algorithms or balancing classes in the training data (data preprocessing) before providing the data as input to the machine learning algorithm. The later technique is preferred as it has wider application.
+The main objective of balancing classes is to either increasing the frequency of the minority class or decreasing the frequency of the majority class. This is done in order to obtain approximately the same number of instances for both the classes. 
+Random Undersampling aims to balance class distribution by randomly eliminating majority class examples.
+We reduced their amount of datapoint of the majority classes (Surgery and Consultation) with the sample() function  and combine some of the categories with lower amount od datapoints into 'Others'.
 
 **Creating the Model**
 
@@ -130,6 +132,7 @@ Note that for Dentistry, we had very good results before blending it to the cate
 * Preprocessing the data: cleaning, lemmatizing, POS tagging, tokenizing
 * Making the dataset more balanced: finding the right amount to remove/keep/adjust
 * Finding the algorithm to use
+* Heuristic approach
 
 
 # Limitations 
