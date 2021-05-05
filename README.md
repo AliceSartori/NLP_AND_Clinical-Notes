@@ -75,7 +75,7 @@ We reduced their amount of datapoint of the majority classes (Surgery and Consul
 
 1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular (how many times a term appears in a document/reciprocal of number of times a term appears in all documents)
 2. From this conversion: Measure of how informative a term  (occurrence of rare term is more informative than that of a widely used term/terms used frequently in a document are more informative that terms used only once)
-3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression.
+3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression, Doc2Vec with Gensim.
 
 
 # Transcription Data after all preprocessing
