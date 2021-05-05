@@ -47,7 +47,7 @@ Across all notebooks cleaning the data set and getting rid of characters in the 
 ![](giphy3dplot.gif)
 
 
-When build out the 3d plot in the gif, for each text snippets we inferred vectors by utilizing a trained Doc2Vec model. We then used Principal Component Analysis (PCA) to reduce the dimensonality down to 3 dementions inorder to visulize the top three dementions in 3d. The dementions we are left with in the visual acount for roughly 30% of the explained variance.
+When building out the 3d plot in the gif, for each text snippets we inferred vectors by utilizing a trained Doc2Vec model. We then used Principal Component Analysis (PCA) to reduce the dimensonality down to 3 dementions inorder to visulize the top three dementions in 3d. The dementions we are left with in the visual acount for roughly 30% of the explained variance.
 
 1. Character lowercase and removal: removed specific characters in our medical transcription column 
 2. Word Tokenization: split our transcription sentences into smaller parts (individual words) called tokens
