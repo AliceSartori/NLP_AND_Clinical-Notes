@@ -6,8 +6,8 @@
 Medical data is extremely hard to find due to HIPAA (Health Insurance Portability and Accountability Act) privacy regulations. As a group, we decided to dip our feet into the fast growing field of Machine Learning and NLP (Natural Language Processing) to extract valuable information from unstructed medical text data. 
 Why NLP in healthcare? 
 A large part of medical information is reported as free-text and patient clinical history has been conveyed for centuries by all medical professionals in the form of notes, reports, trascriptions. 
-There are many applications of text analysis in healthcare.
-One of the many is Healthcare Records Analysis: combining patient records with their biometric data allows hospitals to identify high-risk patients based on their ongoing treatment records. Many companies like Evidation, Tempus, etc. and huge research centers (Icahn Medical school) specialize in taking healthcare records in a variety of ways to uncover advanced health insights. This field is called “precision medicine”
+
+There are many applications of text analysis in healthcare. One of the many is Healthcare Records Analysis: combining patient records with their biometric data allows hospitals to identify high-risk patients based on their ongoing treatment records. Many companies like Evidation, Tempus, etc. and huge research centers (Icahn Medical school) specialize in taking healthcare records in a variety of ways to uncover advanced health insights. This field is called “precision medicine”
 
 
 # Project overview
@@ -69,14 +69,16 @@ From Notebook 2, we gave more importance to Nouns on the assumptions that the Me
 *Notebook 3 Random under-sampling*
 
 Machine Learning algorithms tend to produce unsatisfactory classifiers when faced with imbalanced datasets. Standard classifier algorithms like Decision Tree and Logistic Regression have a bias towards classes which have number of instances. They tend to only predict the majority class data. The features of the minority class are treated as noise and are often ignored. Thus, there is a high probability of misclassification of the minority class as compared to the majority class.
-Dealing with imbalanced datasets entails strategies such as improving classification algorithms or balancing classes in the training data (data preprocessing) before providing the data as input to the machine learning algorithm. The later technique is preferred as it has wider application.
+Dealing with imbalanced datasets like ours entails strategies such as improving classification algorithms or balancing classes in the training data (data preprocessing) before providing the data as input to the machine learning algorithm. The later technique is preferred as it has wider application.
 The main objective of balancing classes is to either increasing the frequency of the minority class or decreasing the frequency of the majority class. This is done in order to obtain approximately the same number of instances for both the classes. 
-Random Undersampling aims to balance class distribution by randomly eliminating majority class examples.
-We reduced their amount of datapoint of the majority classes (Surgery and Consultation) with the sample() function  and combine some of the categories with lower amount od datapoints into 'Others'.
+There are a few resampling techniques. In our case, we felt that Random Under-Sampling was appropriare. Random Undersampling aims to balance class distribution by randomly eliminating majority class examples. This is done until the majority and minority class instances are balanced out.
+We reduced the amount of datapoints of the majority classes (Surgery and Consultation) with the sample() function  and combine some of the categories with lower amount od datapoints into the specialty 'Others'.
+The Disanvantage of this approach is that we discarded potentially useful information which could have be important for building rule classifiers and samples chosen by random under sampling may have been a biased sample and not an accurate representative of the population. Thereby, resulting in inaccurate results with the actual test data set.
+However, running our models multiple times the scores obtained were always close to each other and the model saved always above the best score of 40%. 
 
 **Creating the Model**
 
-1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular (how many times a term appears in a document/reciprocal of number of times a term appears in all documents)
+1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular (how many times a term appears in a document/reciprocal of number of times a term appears in all documents). We chose to do this operation in sklearn, but it could be done in NLTK or gensim as well.
 2. From this conversion: Measure of how informative a term  (occurrence of rare term is more informative than that of a widely used term/terms used frequently in a document are more informative that terms used only once)
 3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression, Doc2Vec with Gensim.
 
@@ -169,7 +171,7 @@ Note that for Dentistry, we had very good results before blending it to the cate
 
 **What would make our models better?**
 * Short term: Random Search Cross Validation using  RandomizedSearchCV method: we can define a grid of hyperparameter ranges and randomly sample from the grid. On each iteration, the algorithm will choose a different combination of the features. However, the benefit of a random search is that we are not trying every combination, but selecting at random to sample a wide range of values. Random search will allow us to narrow down the range for each hyperparameter. After that, we will know where to concentrate our search and we will be able to explicitly specify every combination of settings to try. We can do this with GridSearchCV.
-* Short term: Customize stopwords 
+* Short term: Customized stopwords vocabulary
 * Deep Learning Algorithm
 * Spending more time analyzing / cleaning text data (would need subject matter expertise)
 * Balancing of the dataset
