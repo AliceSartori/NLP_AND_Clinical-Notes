@@ -19,17 +19,17 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 * CSV File                              
 * Pandas                                
 * Numpy                                 
-* Matplotlib                            
+* Matplotlib  
+* Scikit-learn                          
 * NLTK (Natural Language Toolkit)
 * RandomForest
 * Multinomial Naive Bayes
-* Scikit-learn
 * LogisticRegression
 * Hyperparameter tuning with GridSearchCV (RandomForest)
 * TfidfVectorizer
 * Yellowbrick
 * Plotly
-* Doc2Vec
+* Gensim & Doc2Vec
 * PCA
 * Gensim
 
@@ -43,11 +43,6 @@ Across all notebooks cleaning the data set and getting rid of characters in the 
 ![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/Screen%20Shot%202021-05-03%20at%2012.33.12%20PM.png)
 
 *Notebook 1 Classic Approach*
-
-![](giphy3dplot.gif)
-
-
-When building out the 3d plot in the gif, for each text snippets we inferred vectors by utilizing a trained Doc2Vec model. We then used Principal Component Analysis (PCA) to reduce the dimensonality down to 3 dementions inorder to visulize the top three dementions in 3d. The dementions we are left with in the visual acount for roughly 30% of the explained variance.
 
 1. Character lowercase and removal: removed specific characters in our medical transcription column 
 2. Word Tokenization: split our transcription sentences into smaller parts (individual words) called tokens
@@ -76,12 +71,18 @@ We reduced the amount of datapoints of the majority classes (Surgery and Consult
 The Disanvantage of this approach is that we discarded potentially useful information which could have be important for building rule classifiers and samples chosen by random under sampling may have been a biased sample and not an accurate representative of the population. Thereby, resulting in inaccurate results with the actual test data set.
 However, running our models multiple times the scores obtained were always close to each other and the model saved always above the best score of 40%. 
 
-**Creating the Model**
+**Bag-of-words Model **
 
-1. Converting Text to Word Frequency Vectors: there are several ways to do this, such as using CountVectorizer and HashingVectorizer, but the TfidfVectorizer is the most popular (how many times a term appears in a document/reciprocal of number of times a term appears in all documents). We chose to do this operation in sklearn, but it could be done in NLTK or gensim as well.
-2. From this conversion: Measure of how informative a term  (occurrence of rare term is more informative than that of a widely used term/terms used frequently in a document are more informative that terms used only once)
-3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression, Doc2Vec with Gensim.
+Machine learning algorithms cannot work with raw text directly; the text must be converted into numbers. Specifically, vectors of numbers. This is called feature extraction or feature encoding. 
+1. A popular and simple method of feature extraction with text data is called the bag-of-words model of text. A bag-of-words is a representation of text that describes the occurrence of words within a document. It is called a “bag” of words, because any information about the order or structure of words in the document is discarded. The model is only concerned with whether known words occur in the document and how to score the presence of known words, not where these words are in the document.
+There are four types of vector encoding—frequency, one-hot, TF–IDF, and distributed representations and they can be implemeneted in Scikit-Learn, Gensim, and NLTK. The choice of a specific vectorization technique will be largely driven by the problem space.
+In this project we used TfidfVectorizer, that has as central insights that meaning is most likely encoded in the more rare terms from a document.  Under the hood, the TfidfVectorizer uses the CountVectorizer estimator followed by a TfidfTransformer, which normalizes the occurrence counts by the inverse document frequency.
+3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression.
 
+Limitations: One benefit of TF–IDF is that it naturally addresses the problem of stopwords, those words most likely to appear in all documents in the corpus (e.g., “a,” “the,” “of”, etc.), and thus will accrue very small weights under this encoding scheme. This biases the TF–IDF model toward moderately rare words.
+ The bag_of_words model ignores the context, and in turn meaning of words in the document (semantics). Context and meaning can offer a lot to the model, that if modeled could tell the difference between the same words differently arranged (“this is interesting” vs “is this interesting”), synonyms (“old bike” vs “used bike”), and much more.
+
+**Bag-of-words Model **
 
 # Transcription Data after all preprocessing
 
@@ -140,6 +141,16 @@ Note that for Dentistry, we had very good results before blending it to the cate
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_with_reduction.png)
                     Confusion Matrix (with reduction)
+
+
+** Distributed Representation **
+Doc2Vec with Gensim
+While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
+A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
+To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model. We then used Principal Component Analysis (PCA) to reduce the dimensionality down to 3 demensions in order to visualize the top three demensions in 3D. The demensions we are left with in the visual account for roughly 30% of the explained variance.
+
+
+![](giphy3dplot.gif)
 
 
 # Main Challenges
