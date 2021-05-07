@@ -143,7 +143,9 @@ Note that for Dentistry, we had very good results before blending it to the cate
 
 
 # Distributed Representation
+
 ** Doc2Vec with Gensim **
+
 While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
 A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
 To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model. We then used Principal Component Analysis (PCA) to reduce the dimensionality down to 3 demensions in order to visualize the top three demensions in 3D. The demensions we are left with in the visual account for roughly 30% of the explained variance.
