@@ -71,7 +71,7 @@ We reduced the amount of datapoints of the majority classes (Surgery and Consult
 The Disanvantage of this approach is that we discarded potentially useful information which could have be important for building rule classifiers and samples chosen by random under sampling may have been a biased sample and not an accurate representative of the population. Thereby, resulting in inaccurate results with the actual test data set.
 However, running our models multiple times the scores obtained were always close to each other and the model saved always above the best score of 40%. 
 
-## Bag-of-words Model
+# Bag-of-words Model
 
 Machine learning algorithms cannot work with raw text directly; the text must be converted into numbers. Specifically, vectors of numbers. This is called feature extraction or feature encoding. 
 1. A popular and simple method of feature extraction with text data is called the bag-of-words model of text. A bag-of-words is a representation of text that describes the occurrence of words within a document. It is called a “bag” of words, because any information about the order or structure of words in the document is discarded. The model is only concerned with whether known words occur in the document and how to score the presence of known words, not where these words are in the document.
@@ -82,7 +82,6 @@ In this project we used TfidfVectorizer, that has as central insights that meani
 Limitations: One benefit of TF–IDF is that it naturally addresses the problem of stopwords, those words most likely to appear in all documents in the corpus (e.g., “a,” “the,” “of”, etc.), and thus will accrue very small weights under this encoding scheme. This biases the TF–IDF model toward moderately rare words.
  The bag_of_words model ignores the context, and in turn meaning of words in the document (semantics). Context and meaning can offer a lot to the model, that if modeled could tell the difference between the same words differently arranged (“this is interesting” vs “is this interesting”), synonyms (“old bike” vs “used bike”), and much more.
 
-**Bag-of-words Model **
 
 # Transcription Data after all preprocessing
 
