@@ -142,7 +142,7 @@ Note that for Dentistry, we had very good results before blending it to the cate
                     Confusion Matrix (with reduction)
 
 
-** Distributed Representation **
+# Distributed Representation
 Doc2Vec with Gensim
 While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
 A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
