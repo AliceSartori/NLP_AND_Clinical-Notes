@@ -43,6 +43,7 @@ The project has 2 notebooks which shows the different phases of the work as far 
 The method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
 Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization.
 
+![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/plots/medical_specialty.png)
 
 *Notebook 1 Classic Approach*
 
