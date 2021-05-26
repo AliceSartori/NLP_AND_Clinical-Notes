@@ -71,10 +71,7 @@ The main objective of balancing classes is to either increasing the frequency of
 There are a few resampling techniques. In our case, we felt that Random Under-Sampling was appropriare. Random Undersampling aims to balance class distribution by randomly eliminating majority class examples. This is done until the majority and minority class instances are balanced out.
 We reduced the amount of datapoints of the majority classes (Surgery and Consultation) with the sample() function  and combine some of the categories with lower amount od datapoints into the specialty 'Others'.
 The Disanvantage of this approach is that we discarded potentially useful information which could have be important for building rule classifiers and samples chosen by random under sampling may have been a biased sample and not an accurate representative of the population. Thereby, resulting in inaccurate results with the actual test data set.
-However, running our models multiple times the scores obtained were always close to each other and the model saved always above the best score of 40%. 
-
-#Multi-Class Text Classification with Scikit-Learn
-
+However, running our models multiple times the scores obtained were always close to each other and the model saved always above the best score of 40%. However comparing to 
 
 Machine learning algorithms cannot work with raw text directly; the text must be converted into numbers. Specifically, vectors of numbers. This is called feature extraction or feature encoding. 
 1. A popular and simple method of feature extraction with text data is called the bag-of-words model of text. A bag-of-words is a representation of text that describes the occurrence of words within a document. It is called a “bag” of words, because any information about the order or structure of words in the document is discarded. The model is only concerned with whether known words occur in the document and how to score the presence of known words, not where these words are in the document.
@@ -176,7 +173,8 @@ To achieve that, we created a list of TaggedDocument objects and then instantiat
     2. In clinical notes the same text could be repeated by the same practitioner (a lot of copy and paste)
 
     3. Some medical stopwords could have been removed ("patient", "doctor", "diagnosis") 
-    4. Inbalanced Dataset
+    4. Doc2Vec works better on millions on records
+    5. Inbalanced Dataset
 
 
 # Reflection
