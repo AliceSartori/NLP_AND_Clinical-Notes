@@ -39,7 +39,7 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 
 **Preprocessing Data**
 
-The project has 2 notebooks which shows the different phases of the work as far as cleaning, ideas, and analysis. 
+The project has 5 notebooks which shows the different phases of the work as far as cleaning, ideas, and analysis. 
 The method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
 Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization.
 
