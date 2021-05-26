@@ -12,7 +12,9 @@ There are many applications of text analysis in healthcare. One of the many is H
 
 # Project overview
 
-For our final project, our group chose to use a dataset (from [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)) that contained medical transcriptions and the respective medical specialties (4998 datapoints). We chose to implement multiple supervised classification machine learning models - after heavily working on the corpora - to see if we were able to correctly classify the medical specialty based on the trascription text. 
+For our final project, our group chose to use a dataset (from [Kaggle](https://www.kaggle.com/tboyle10/medicaltranscriptions?select=mtsamples.csv)) that contained medical transcriptions and the respective medical specialties (4998 datapoints). We chose to implement multiple supervised and unsupervised machine learning techniques to see if we were able to correctly classify the medical specialty based on the trascription text. 
+
+
 
 # Tools / Technology Used
 
@@ -20,27 +22,27 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 * Pandas                                
 * Numpy                                 
 * Matplotlib  
-* Scikit-learn                          
+* Scikit-learn  
+* TfidfVectorizer   
+* * Doc2Vec                     
 * NLTK (Natural Language Toolkit)
 * RandomForest
 * Multinomial Naive Bayes
 * LogisticRegression
-* Hyperparameter tuning with GridSearchCV (RandomForest)
-* TfidfVectorizer
+* Hyperparameter tuning with RandomSearchCV
+* GridSearchCV
 * Yellowbrick
-* Plotly
-* Gensim & Doc2Vec
-* PCA
 * Gensim
+* T-sne
 
 # Pipeline
 
 **Preprocessing Data**
 
-Our project has three notebooks which shows the different phases of our work as far as cleaning, ideas, and analysis. 
-Our method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
+The project has 2 notebooks which shows the different phases of the work as far as cleaning, ideas, and analysis. 
+The method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
 Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization.
-![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/Screen%20Shot%202021-05-03%20at%2012.33.12%20PM.png)
+
 
 *Notebook 1 Classic Approach*
 
@@ -71,11 +73,15 @@ We reduced the amount of datapoints of the majority classes (Surgery and Consult
 The Disanvantage of this approach is that we discarded potentially useful information which could have be important for building rule classifiers and samples chosen by random under sampling may have been a biased sample and not an accurate representative of the population. Thereby, resulting in inaccurate results with the actual test data set.
 However, running our models multiple times the scores obtained were always close to each other and the model saved always above the best score of 40%. 
 
-# Bag-of-words Model
+#Multi-Class Text Classification with Scikit-Learn
+
 
 Machine learning algorithms cannot work with raw text directly; the text must be converted into numbers. Specifically, vectors of numbers. This is called feature extraction or feature encoding. 
 1. A popular and simple method of feature extraction with text data is called the bag-of-words model of text. A bag-of-words is a representation of text that describes the occurrence of words within a document. It is called a “bag” of words, because any information about the order or structure of words in the document is discarded. The model is only concerned with whether known words occur in the document and how to score the presence of known words, not where these words are in the document.
 There are four types of vector encoding—frequency, one-hot, TF–IDF, and distributed representations and they can be implemeneted in Scikit-Learn, Gensim, and NLTK. The choice of a specific vectorization technique will be largely driven by the problem space.
+
+# Multi-Class Text Classification with Scikit-Learn
+
 In this project we used TfidfVectorizer, that has as central insights that meaning is most likely encoded in the more rare terms from a document.  Under the hood, the TfidfVectorizer uses the CountVectorizer estimator followed by a TfidfTransformer, which normalizes the occurrence counts by the inverse document frequency.
 3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression.
 
@@ -142,16 +148,12 @@ Note that for Dentistry, we had very good results before blending it to the cate
                     Confusion Matrix (with reduction)
 
 
-# Distributed Representation
-
-** Doc2Vec with Gensim **
+# Distributed Representation : Multi-Class Text Classification with Doc2Vec & Logistic Regression
 
 While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
 A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
-To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model. We then used Principal Component Analysis (PCA) to reduce the dimensionality to visualize the top three demensions in 3D. The dimensions we are left with in the visual account for roughly 30% of the explained variance.
+To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model.
 
-
-![](giphy3dplot.gif)
 
 
 # Main Challenges
@@ -160,11 +162,12 @@ To achieve that, we created a list of TaggedDocument objects and then instantiat
 * Making the dataset more balanced: finding the right amount to remove/keep/adjust
 * Finding the algorithm to use
 * Heuristic approach
+* Doc2Vec Model
 
 
 # Limitations 
 
-**Why isn't our model performing even better?**
+**Why isn't our models performing even better?**
 
 * Medical data in general is a lot harder to analyze / preprocess as it is very complicated
     
@@ -172,11 +175,8 @@ To achieve that, we created a list of TaggedDocument objects and then instantiat
     
     2. In clinical notes the same text could be repeated by the same practitioner (a lot of copy and paste)
 
-    3. Some medical stopwords could have been removed ("patient", "doctor", "diagnosis") due to a high/high relationship TF/IDF
-
-* We had to make sure to not steer our model and overfit it to show our biases.  If we brought too much bias into the process, we would've been taking away the advatange of machine learning.
-
-* Lack of medical data information
+    3. Some medical stopwords could have been removed ("patient", "doctor", "diagnosis") 
+    4. Inbalanced Dataset
 
 
 # Reflection
@@ -187,6 +187,6 @@ To achieve that, we created a list of TaggedDocument objects and then instantiat
 * Deep Learning Algorithm
 * Spending more time analyzing / cleaning text data (would need subject matter expertise)
 * Balancing of the dataset
-* Finding more data / medical transcriptions for the specialties with less datapoints
+
 
 
