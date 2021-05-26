@@ -145,6 +145,8 @@ Note that for Dentistry, we had very good results before blending it to the cate
 While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
 A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
 To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model.
+First, we instantiated a doc2vec model — Distributed Bag of Words (DBOW). In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG); in the doc2vec architecture, the corresponding algorithms are “distributed memory” (DM) and “distributed bag of words” (DBOW).
+After applying the DBOW algorithm, I trained a logistic regression classifier.
 
 
 ![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/plots/tsnedoc2vecTrain.png)
