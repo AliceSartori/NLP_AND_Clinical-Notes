@@ -147,7 +147,7 @@ A word embedding is an approach to provide a dense vector representation of word
 To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model.
 
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
+![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/plots/tsnedoc2vecTrain.png)
 
 
 ![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
