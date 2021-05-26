@@ -140,20 +140,17 @@ Note that for Dentistry, we had very good results before blending it to the cate
                    
 
 
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_without_reduction.png)
-                    Confusion Matrix (without reduction)
-
-
-![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/confusion_matrix_with_reduction.png)
-                    Confusion Matrix (with reduction)
-
-
 # Distributed Representation : Multi-Class Text Classification with Doc2Vec & Logistic Regression
 
 While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
 A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
 To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model.
 
+
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
+
+
+![Image](https://github.com/AliceSartori/Medical_Specialist_Machine_Learning/blob/main/plots/classification_report_GRIDSEARCH_WITHREDUCTION.png)
 
 
 # Main Challenges
