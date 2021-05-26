@@ -107,7 +107,7 @@ Limitations: One benefit of TF–IDF is that it naturally addresses the problem 
 # Results
 
 
-# Summary of Findings Graphs
+# Summary of Findings Graphs TFIDF
 Precision can be seen as a measure of a classifier’s exactness. Said another way, “for all instances classified positive, what percent was correct?”
 
 Recall is a measure of the classifier’s completeness; the ability of a classifier to correctly find all positive instances. Said another way, “for all instances that were actually positive, what percent was classified correctly?”
