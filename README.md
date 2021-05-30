@@ -39,7 +39,7 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 
 **Preprocessing Data**
 
-The project has 5 notebooks which shows the different phases of the work as far as cleaning, ideas, and analysis. 
+The project presents two phases: 3 preliminary notebooks and 2 final notebooks which show the different phases of the work as far as cleaning, ideas, and analysis. 
 The method was a constant give and take - trying different methods, seeing how they perfomed, and adjusting based on what we saw.
 Across all notebooks cleaning the data set and getting rid of characters in the raw text even before the tokenization.
 
@@ -69,9 +69,9 @@ From Notebook 2, we gave more importance to Nouns on the assumptions that the Me
 
 *Notebook 3 Random under-sampling*
 
-When we encounter such problems, we are bound to have difficulties solving them with standard algorithms. Conventional algorithms are often biased towards the majority class, not taking the data distribution into consideration. In the worst case, minority classes are treated as outliers and ignored. For some cases, such as fraud detection or cancer prediction, we would need to carefully configure our model or artificially balance the dataset, for example by undersampling or oversampling each class.
-There are a few resampling techniques. In our case, we felt that Random Under-Sampling was appropriare. Random Undersampling aims to balance class distribution by randomly eliminating majority class examples. This is done until the majority and minority class instances are balanced out.
-We reduced the amount of datapoints of the majority classes (Surgery and Consultation) with the sample() function  and combine some of the categories with lower amount od datapoints into the specialty 'Others'.
+When we encounter such problems, we are bound to have difficulties solving them with standard algorithms. Conventional algorithms are often biased towards the majority class, not taking the data distribution into consideration. In the worst case, minority classes are treated as outliers and ignored. For some cases we would need to carefully configure our model or artificially balance the dataset, for example by undersampling or oversampling each class.
+In our case, we felt that Random Under-Sampling was appropriare. Random Undersampling aims to balance class distribution by randomly eliminating majority class examples. This is done until the majority and minority class instances are balanced out.
+We reduced the amount of datapoints of the majority classes (Surgery and Consultation) with the sample() function and combined some of the categories with lower amount od datapoints into the specialty 'Others'.
 The Disanvantage of this approach is that we discarded potentially useful information which could have be important for building rule classifiers and samples chosen by random under sampling may have been a biased sample and not an accurate representative of the population. Thereby, resulting in inaccurate results with the actual test data set.
 However, running our models multiple times the scores obtained were always close to each other and the model saved always above the score of 35%. 
 
@@ -86,7 +86,7 @@ In this project we used TfidfVectorizer, that has as central insights that meani
 3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression.
 
 Limitations: One benefit of TF–IDF is that it naturally addresses the problem of stopwords, those words most likely to appear in all documents in the corpus (e.g., “a,” “the,” “of”, etc.), and thus will accrue very small weights under this encoding scheme. This biases the TF–IDF model toward moderately rare words.
- The bag_of_words model ignores the context, and in turn meaning of words in the document (semantics). Context and meaning can offer a lot to the model, that if modeled could tell the difference between the same words differently arranged (“this is interesting” vs “is this interesting”), synonyms (“old bike” vs “used bike”), and much more.
+The bag_of_words model ignores the context, and in turn meaning of words in the document (semantics). Context and meaning can offer a lot to the model, that if modeled could tell the difference between the same words differently arranged (“this is interesting” vs “is this interesting”), synonyms (“old bike” vs “used bike”), and much more.
 
 
 # Transcription Data after all preprocessing
@@ -143,8 +143,8 @@ Note that for Dentistry, we had very good results before blending it to the cate
 # Distributed Representation: Multi-Class Text Classification with Doc2Vec & Logistic Regression - Final 
 
 While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
-A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
-To achieve that, we created a list of TaggedDocument objects and then instantiated a Doc2Vec model.
+Word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
+To achieve that, we created a list of TaggedDocument objects and then instantiated an unsupervised Doc2Vec model.
 First, we instantiated a doc2vec model — Distributed Bag of Words (DBOW). In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG); in the doc2vec architecture, the corresponding algorithms are “distributed memory” (DM) and “distributed bag of words” (DBOW).
 After applying the DBOW algorithm, I trained a logistic regression classifier.
 
@@ -182,7 +182,7 @@ After applying the DBOW algorithm, I trained a logistic regression classifier.
 # Reflection
 
 **What would make our models better?**
-* Short term: Random Search Cross Validation using  RandomizedSearchCV method: we can define a grid of hyperparameter ranges and randomly sample from the grid. On each iteration, the algorithm will choose a different combination of the features. However, the benefit of a random search is that we are not trying every combination, but selecting at random to sample a wide range of values. Random search will allow us to narrow down the range for each hyperparameter. After that, we will know where to concentrate our search and we will be able to explicitly specify every combination of settings to try. We can do this with GridSearchCV.
+* Short term: Random Search Cross Validation using RandomizedSearchCV method: we can define a grid of hyperparameter ranges and randomly sample from the grid. On each iteration, the algorithm will choose a different combination of the features. However, the benefit of a random search is that we are not trying every combination, but selecting at random to sample a wide range of values. Random search will allow us to narrow down the range for each hyperparameter. After that, we will know where to concentrate our search and we will be able to explicitly specify every combination of settings to try. We can do this with GridSearchCV = DONE
 * Short term: Customized stopwords vocabulary
 * Deep Learning Algorithm
 * Spending more time analyzing / cleaning text data (would need subject matter expertise)
