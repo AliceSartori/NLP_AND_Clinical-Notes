@@ -7,7 +7,7 @@ Medical data is extremely hard to find due to HIPAA (Health Insurance Portabilit
 Why NLP in healthcare? 
 A large part of medical information is reported as free-text and patient clinical history has been conveyed for centuries by all medical professionals in the form of notes, reports, trascriptions. 
 
-There are many applications of text analysis in healthcare. One of the many is Healthcare Records Analysis: combining patient records with their biometric data allows hospitals to identify high-risk patients based on their ongoing treatment records. Many companies like Evidation, Tempus, etc. and huge research centers (Icahn Medical school) specialize in taking healthcare records in a variety of ways to uncover advanced health insights. This field is called “precision medicine”
+There are many applications of text analysis in healthcare. One of the many is Healthcare Records Analysis: combining patient records with their biometric data allows hospitals to identify high-risk patients based on their ongoing treatment records. Many companies like Evidation, Tempus, etc. and huge research centers (Icahn Medical school) specialize in taking healthcare records in a variety of ways to uncover advanced health insights. This field is called “precision medicine”.
 
 
 # Project overview
