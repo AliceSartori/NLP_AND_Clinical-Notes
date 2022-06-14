@@ -80,7 +80,7 @@ Machine learning algorithms cannot work with raw text directly; the text must be
 A popular and simple method of feature extraction with text data is called the bag-of-words model of text. A bag-of-words is a representation of text that describes the occurrence of words within a document. It is called a “bag” of words, because any information about the order or structure of words in the document is discarded. The model is only concerned with whether known words occur in the document and how to score the presence of known words, not where these words are in the document.
 There are four types of vector encoding—frequency, one-hot, TF–IDF, and distributed representations and they can be implemeneted in Scikit-Learn, Gensim, and NLTK. The choice of a specific vectorization technique will be largely driven by the problem space.
 
-# Multi-Class Text Classification with Scikit-Learn - Final
+# Multi-Class Text Classification with Scikit-Learn
 
 In this project we used TfidfVectorizer, that has as central insights that meaning is most likely encoded in the more rare terms from a document.  Under the hood, the TfidfVectorizer uses the CountVectorizer estimator followed by a TfidfTransformer, which normalizes the occurrence counts by the inverse document frequency.
 3. Algorithms used: NaiveBayes (Multinomial), RandomForest, Hyperparameter tuning with GridSearchCV (RandomForest), Logistic Regression.
@@ -140,7 +140,7 @@ Note that for Dentistry, we had very good results before blending it to the cate
                    
 
 
-# Distributed Representation: Multi-Class Text Classification with Doc2Vec & Logistic Regression - Final 
+# Distributed Representation: Multi-Class Text Classification with Doc2Vec & Logistic Regression 
 
 While frequency, one-hot, and TF–IDF encoding enable us to put documents into vector space, it is often useful to also encode the similarities between documents in the context of that same vector space.
 Word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
