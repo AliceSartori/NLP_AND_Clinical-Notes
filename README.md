@@ -34,6 +34,7 @@ For our final project, our group chose to use a dataset (from [Kaggle](https://w
 * Yellowbrick
 * Gensim
 * T-sne
+* PCA
 
 # Pipeline
 
@@ -147,7 +148,9 @@ Word embedding is an approach to provide a dense vector representation of words 
 To achieve that, we created a list of TaggedDocument objects and then instantiated an unsupervised Doc2Vec model.
 First, we instantiated a doc2vec model — Distributed Bag of Words (DBOW). In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG); in the doc2vec architecture, the corresponding algorithms are “distributed memory” (DM) and “distributed bag of words” (DBOW).
 After applying the DBOW algorithm, I trained a logistic regression classifier.
+I then used Principal Component Analysis (PCA) to reduce the dimensionality to visualize the top three demensions in 3D. The dimensions left with in the visual account for roughly 30% of the explained variance.
 
+![image](https://user-images.githubusercontent.com/70864401/173633211-63825663-69d9-4e15-8083-f370f6fb7b02.png)
 
 ![Image](https://github.com/AliceSartori/NLP_AND_Clinical-Notes/blob/main/plots/tsnedoc2vecTrain.png)
 
