@@ -147,8 +147,8 @@ While frequency, one-hot, and TF–IDF encoding enable us to put documents into 
 Word embedding is an approach to provide a dense vector representation of words that capture something about their meaning. 
 To achieve that, we created a list of TaggedDocument objects and then instantiated an unsupervised Doc2Vec model.
 First, we instantiated a doc2vec model — Distributed Bag of Words (DBOW). In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG); in the doc2vec architecture, the corresponding algorithms are “distributed memory” (DM) and “distributed bag of words” (DBOW).
-After applying the DBOW algorithm, I trained a logistic regression classifier.
-I then used Principal Component Analysis (PCA) to reduce the dimensionality to visualize the top three demensions in 3D. The dimensions left with in the visual account for roughly 30% of the explained variance.
+After applying the DBOW algorithm, we trained a logistic regression classifier.
+We then used Principal Component Analysis (PCA) to reduce the dimensionality to visualize the top three dimensions in 3D. The dimensions left with in the visual account for roughly 30% of the explained variance.
 
 ![image](https://user-images.githubusercontent.com/70864401/173633211-63825663-69d9-4e15-8083-f370f6fb7b02.png)
 
